@@ -1,10 +1,8 @@
 package br.com.mariojp.solid.srp;
 
 public class ReceiptFormatter {
-//  ReceiptFormatter → responsável apenas por montar o texto do recibo
-	
 	public StringBuilder montaRecibo(Order order, double subtotal, double tax, double total){
-		StringBuilder sb = new StringBuilder(); //Formatando o Recibo
+		StringBuilder sb = new StringBuilder();
 		sb.append("=== RECIBO ===\n");
 		for (var i : order.getItems()) {
 			sb.append(i.getName()).append(" x").append(i.getQuantity()).append(" = ").append(i.getUnitPrice() * i.getQuantity())
@@ -16,9 +14,3 @@ public class ReceiptFormatter {
 		return sb;
 	}
 }
-//StringBuilder sb = new StringBuilder(); //Formatando o Recibo
-//sb.append("=== RECIBO ===\n");
-//for (var i : order.getItems()) {
-//	sb.append(i.getName()).append(" x").append(i.getQuantity()).append(" = ").append(i.getUnitPrice() * i.getQuantity())
-//			.append("\n");
-//}
